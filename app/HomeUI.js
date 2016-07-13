@@ -35,34 +35,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
     welcome: {
         fontSize: 20,
         textAlign: 'center',
         margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
-    image: {},
-    progressBarContainer: {},
-    progressBar: {
-        alignSelf: 'flex-start ',
-        flex: 1,
-        backgroundColor: '#ff0000'
-    },
-    viewPager: {
-        flex: 1
-    },
-    buttonText: {
-        color: 'white'
-    },
-    startupButton:{
-
     }
 });
 

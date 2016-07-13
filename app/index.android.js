@@ -45,14 +45,16 @@ class app extends Component {
     render() {
         let defaultName = 'WelcomeUI';
         let defaultCompenent = WelcomeUI;
-        return (<Navigator
-            initialRoute={{name:defaultName,component:defaultCompenent}}
-            configureScene={
+        return (
+            <View style={styles.container}>
+                <Navigator
+                    initialRoute={{name:defaultName,component:defaultCompenent}}
+                    configureScene={
                     (route) =>{
                         return Navigator.SceneConfigs.FloatFromRight;
                     }
                 }
-            renderScene={
+                    renderScene={
                 (route,navigator)=>{
                 let Component = route.component;
                 return <Component {...route.parms} navigator={navigator}/>
@@ -60,7 +62,9 @@ class app extends Component {
                 }
             }
 
-        />);
+                />
+            </View>
+        );
 
 
     }
@@ -117,7 +121,6 @@ class WelcomeUI extends Component {
         for (var i = 0; i < PAGES; i++) {
             var pageStyle = {
                 backgroundColor: BGCOLOR[i % BGCOLOR.length],
-                alignItems: 'center',
                 padding: 20
             };
             if (i < PAGES - 1) {
@@ -157,10 +160,10 @@ class WelcomeUI extends Component {
             <View style={styles.buttons}>
                 { animationsAreEnabled ?
                     <Button
-                text ="Turn off animations"
-                enable ={true}
-                onPress={()=>this.setState({animationAreEnadle:false})}
-                />:<Button
+                        text ="Turn off animations"
+                        enable ={true}
+                        onPress={()=>this.setState({animationAreEnadle:false})}
+                    />:<Button
                     text="Turn animations back on"
                     enable ={true}
                     onPress ={()=>this.setState({animationAreEnadle:true})}/>}
@@ -181,7 +184,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
     welcome: {
@@ -202,7 +204,6 @@ const styles = StyleSheet.create({
         borderWidth:2
     },
     progressBar: {
-        alignSelf: 'flex-start ',
         flex: 1,
         backgroundColor: '#ff0000'
     },
@@ -213,10 +214,12 @@ const styles = StyleSheet.create({
         color: 'white'
     },
     startupButton:{
-
+        width:100,
+        height:60
     },
     buttons:{
-
+        width:100,
+        height:60
     }
 });
 

@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
     likeContainer: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
     welcome: {
@@ -65,16 +64,10 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     image:{
+        width:100,
+        height:60
+    },
 
-    },
-    progressBarContainer:{
-
-    },
-    progressBar:{
-        alignSelf:'flex-start ',
-        flex:1,
-        backgroundColor:'#ff0000'
-    },
     viewPager:{
         flex:1
     },
@@ -85,7 +78,8 @@ const styles = StyleSheet.create({
         backgroundColor:'rgba(0,0,0,1)',
     },
     likesText:{
-
+        width:100,
+        height:60
     }
 });
 

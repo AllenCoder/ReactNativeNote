@@ -72,14 +72,16 @@ const styles = StyleSheet.create({
         flex:1
     },
     buttonText:{
-        color:'white'
+        color:'#333333'
     },
     likeButton:{
         backgroundColor:'rgba(0,0,0,1)',
     },
     likesText:{
+        fontSize: 20,
+        color:'red',
         width:100,
-        height:60
+        height:60,
     }
 });
 

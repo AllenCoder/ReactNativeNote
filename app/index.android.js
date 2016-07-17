@@ -6,6 +6,7 @@
 
 import React, { Component } from 'react';
 import {
+    Dimensions,
     AppRegistry,
     StyleSheet,
     Text,
@@ -121,13 +122,12 @@ class WelcomeUI extends Component {
         for (var i = 0; i < PAGES; i++) {
             var pageStyle = {
                 backgroundColor: BGCOLOR[i % BGCOLOR.length],
-                padding: 20
             };
             if (i < PAGES - 1) {
 
                 pages.push(<View key={i} style={pageStyle} collapsable={false}>
                     <Image
-                        style={styles.image}
+                        style={{flex: 1, width: width, height: height}}
                         source={ImageSrc[i%BGCOLOR.length]}
                     />
                     <LikeCount />
@@ -136,8 +136,9 @@ class WelcomeUI extends Component {
             } else {
                 //最后一页 ViewPage 加上一个按钮
                 pages.push(<View key={i} style={pageStyle} collapsable={false}>
-                    <Image style={styles.image}
-                           source={ImageSrc[i%BGCOLOR.length]}/>
+                    <Image         style={{flex: 1, width: width, height: height}}
+
+                                   source={ImageSrc[i%BGCOLOR.length]}/>
                     <LikeCount />
                     <TouchableOpacity onPress={this.onClick} style={styles.startupButton}>
                         <Text style={styles.likesText}>{thumbsUp+'启动首页'}</Text>
@@ -157,19 +158,22 @@ class WelcomeUI extends Component {
                 {pages}
 
             </ViewPagerAndroid>
-            <View style={styles.buttons}>
+            <View style={styles.button}>
                 { animationsAreEnabled ?
                     <Button
                         text ="Turn off animations"
+
                         enable ={true}
-                        onPress={()=>this.setState({animationAreEnadle:false})}
+                        onPress={()=>this.setState({animationAreEnadle:false}) }
+
                     />:<Button
                     text="Turn animations back on"
                     enable ={true}
-                    onPress ={()=>this.setState({animationAreEnadle:true})}/>}
+                    onPress ={()=>this.setState({animationAreEnadle:true})}
+                    />}
             </View>
             <View style={styles.buttons}>
-                <Button text ="Start" enabled ={page>0} onPress={() =>this.go(0)}/>
+                <Button style={styles.buttonText} text ="Start" enabled ={page>0} onPress={() =>this.go(0)}/>
                 <Button text ="Prev" enabled ={page>0} onPress={() =>this.move(-1)}/>
                 <Text style={styles.buttonText}>页:{page+1}/{PAGES}</Text>
                 <ProgressBar size={100} progress ={this.state.progress}/>
@@ -180,10 +184,11 @@ class WelcomeUI extends Component {
     }
 
 }
+var {width,height,scale,fontScale} = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
         backgroundColor: '#F5FCFF',
     },
     welcome: {
@@ -196,7 +201,10 @@ const styles = StyleSheet.create({
         color: '#333333',
         marginBottom: 5,
     },
-    image: {},
+    image: {
+        flex: 1,
+
+    },
     progressBarContainer: {
         height:10,
         margin:10,
@@ -211,15 +219,22 @@ const styles = StyleSheet.create({
         flex: 1
     },
     buttonText: {
-        color: 'white'
+        color: 'white',
+        width:50,
+        alignItems:'center'
+
+
     },
     startupButton:{
         width:100,
         height:60
     },
     buttons:{
-        width:100,
-        height:60
+        flexDirection:'row',
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        margin: 2,
+        height: 30,
+        justifyContent: 'center',
     }
 });
 

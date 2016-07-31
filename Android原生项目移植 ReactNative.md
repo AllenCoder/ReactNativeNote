@@ -10,7 +10,7 @@
     1.  一个已有的 Android 原生项目
     2. 已经配置好的原生 Android 开发环境和 node.js已经 RN 环境
     3. 改造之后的流程图 
-   ![图片](http://7xs9qs.com1.z0.glb.clouddn.com/01.png)
+   ![图片](http://7xs9qs.com1.z0.glb.clouddn.com/01.png?imageView2/1/w/600/h/400/interlace/0/q/96|watermark/2/text/aHR0cHM6Ly9naXRodWIuY29tL0FsbGVuQ29kZXI=/font/5a6L5L2T/fontsize/500/fill/I0Y3RjdGNw==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 
 ## 2.开始改造
     1. 在原生 Android 项目的在app/build.gradle文件中，添加React Native依赖：

@@ -15,6 +15,7 @@ import {
     View,
     Image,
     TouchableOpacity,
+
 } from 'react-native';
 export default class LikeCount extends Component{
     //喜欢数组件
@@ -84,4 +85,5 @@ const styles = StyleSheet.create({
         height:60,
     }
 });
+
 

@@ -13,8 +13,23 @@ import {
     StyleSheet,
     Text,
     View,
+    ListView,
+    TouchableViewBackedScrollView,
+
 } from 'react-native';
 export default class HomeUI extends Component{
+    
+    constructor(props){
+        super(props);
+        this.state ={
+            dataSource:new ListView.DataSource({
+                rowHasChanged:(row1,row2) =>row1!==row2,
+            }),
+        }
+    }
+    _pressButton(){
+        const { navigator} = this.props;
+    }
     goBack(){
         const {navigator} = this.props;
         if (navigator){

@@ -11,7 +11,7 @@ import com.facebook.react.shell.MainReactPackage;
 
 import java.util.Arrays;
 import java.util.List;
-
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -23,7 +23,7 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage()
+          new RNDeviceInfo(), new MainReactPackage()
       );
     }
   };

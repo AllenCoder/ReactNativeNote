@@ -8,6 +8,15 @@
   "dependencies": {
     "react": "15.2.1",
     "react-native": "0.29.0",
-    "react-native-swiper": "^1.4.6"
+    "react-native-device-info": "^0.9.3",
+    "react-native-storage": "^0.1.2",
+    "react-native-swiper": "^1.4.6",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.3.1"
   }
 }

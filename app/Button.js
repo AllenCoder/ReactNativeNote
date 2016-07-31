@@ -15,7 +15,10 @@ import {
     View,
     Image,
     TouchableNativeFeedback,
+    
+    
 } from 'react-native';
+
 
 export default class Button extends Component {
     //开始 前进 后退 最后
@@ -32,6 +35,7 @@ export default class Button extends Component {
 
         }
     }
+    
 
     render(){
         return(<TouchableNativeFeedback onPress={this._handlePress}>

@@ -13,12 +13,23 @@
    ![图片](http://7xs9qs.com1.z0.glb.clouddn.com/01.png?imageView2/1/w/600/h/400/interlace/0/q/96|watermark/2/text/aHR0cHM6Ly9naXRodWIuY29tL0FsbGVuQ29kZXI=/font/5a6L5L2T/fontsize/500/fill/I0Y3RjdGNw==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 
 ## 2.开始改造
-    1. 在原生 Android 项目的在app/build.gradle文件中，添加React Native依赖：
-
+  1. *在原生 Android 项目的在app/build.gradle文件中，添加React Native依赖：*
+   
+   
 ```
 compile"com.facebook.react:react-native:+
 ```
-    2.在工程目录下找到工程的 build.gradle文件中，添加 maven依赖
+
+   2. *加入.so 库*
+   
+```
+ndk {
+    abiFilters "armeabi-v7a", "x86"
+}   
+```
+
+   3. *在工程目录下找到工程的 build.gradle文件中，添加 maven依赖*
+    
 ```
 allprojects {
     repositories {
@@ -49,7 +60,6 @@ package com.allen.reactapp;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.facebook.react.BuildConfig;
 import com.facebook.react.LifecycleState;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
@@ -73,10 +83,15 @@ public  class MyReactActivity extends Activity implements DefaultHardwareBackBtn
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModuleName("index.android")
                 .addPackage(new MainReactPackage())
-                .setUseDeveloperSupport(BuildConfig.DEBUG)
+                /**
+                 * http://stackoverflow.com/questions/37951246/react-native-cannot-find-development-server-integrating-existing-android-app
+                 * 调试模式下,建议直接写成 true 吧,我就因为这个错误,调了两天原因
+                 */
+//                .setUseDeveloperSupport(BuildConfig.DEBUG)
+                .setUseDeveloperSupport(true)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
-        mReactRootView.startReactApplication(mReactInstanceManager, "my_react_activity", null);
+        mReactRootView.startReactApplication(mReactInstanceManager, "myreactactivity", null);
 
         setContentView(mReactRootView);
     }
@@ -115,6 +130,7 @@ public  class MyReactActivity extends Activity implements DefaultHardwareBackBtn
 
 }
 
+
  
 ```
 
@@ -146,6 +162,7 @@ public  class MyReactActivity extends Activity implements DefaultHardwareBackBtn
 ![package_json](http://7xs9qs.com1.z0.glb.clouddn.com/package_json.png)
 # 3. 工程目录下创建 index.android.js 由于是测试代码直接 Copy FaceBook 的源码
 ```
+
 
 /**
  * Sample React Native App
@@ -199,7 +216,8 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('my_react_activity', () => AwesomeProject);
+AppRegistry.registerComponent('myreactactivity', () => AwesomeProject);
+
 
 ```
 
@@ -208,17 +226,27 @@ AppRegistry.registerComponent('my_react_activity', () => AwesomeProject);
 # 4.检查以上所有步骤，有无遗漏，如果正常，接下来就可以顺利的运行你的混合 APP 了，如果还不行，你需要检查你的姿势是否正确？
 
 运行你的 APP
+
     1. 在项目的工程路径运行以下命令来启动你的开发服务器
+    
 ```
 react-native start
 ```
-或
+或者执行
+
 ```
 npm start
 ```
     2. android studio 调试你的 APP
+    3. 演示效果图
+    
+<img src="https://github.com/AllenCoder/AndroidDevCoder/blob/master/reactapp/gif/device-2016-08-18-224828.png" width=300 />
 
+===================
 
+<img src="https://github.com/AllenCoder/AndroidDevCoder/blob/master/reactapp/gif/device-2016-08-18-224855.png" width=300 />
+
+## 错误解决：
 
 ```
   Process: com.allen.reactapp, PID: 20469
@@ -252,6 +280,8 @@ Try the following to fix the issue:
 Ensure that the packager server is running
 Ensure that your device/emulator is connected to your machine and has USB debugging enabled - run 'adb devices' to see a list of connected devices
 ```
+> 解决办法：
+> .setUseDeveloperSupport(true)  *调试模式下,建议直接写成 true 吧,*
 
 签名打包混合 APP
     1. 将 js 文件存入 bundle 一起打包
@@ -262,3 +292,4 @@ curl -k "http://localhost:8081/index.android.bundle"> reactapp/src/main/assets/i
 执行完命令成功，在 assets目录应该看到 index.android.bundle文件
 
 Android studio 执行打包过程，作为一名 Android 老司机我就不再具体描述了
+> [原 Android 移植 React Native 项目地址](https://github.com/AllenCoder/AndroidDevCoder/tree/master/reactapp)

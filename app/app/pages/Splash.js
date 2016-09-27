@@ -17,7 +17,7 @@ var {width,height,scale,fontScale} = Dimensions.get('window');
 var storge = new Storage();
 var DeviceInfo = require('react-native-device-info');
 var version  ;
-export default class Splash extends React.Component {
+export default class  Splash extends React.Component {
     constructor(props) {
         super(props);
 

@@ -1,0 +1,290 @@
+{
+	"liveValues": [
+		{
+			"range": {
+				"from": {
+					"line": 21,
+					"ch": 21
+				},
+				"to": {
+					"line": 21,
+					"ch": 40
+				}
+			},
+			"editWith": "colorPicker",
+			"type": "string",
+			"name": "BorderColor"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 24,
+					"ch": 25
+				},
+				"to": {
+					"line": 24,
+					"ch": 34
+				}
+			},
+			"editWith": "colorPicker",
+			"type": "string",
+			"name": "BackgroundColor"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 26,
+					"ch": 23
+				},
+				"to": {
+					"line": 26,
+					"ch": 31
+				}
+			},
+			"editWith": "dropdown",
+			"dropdownOptions": "FlexDirection",
+			"type": "string",
+			"name": "FlexDirection"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 36,
+					"ch": 15
+				},
+				"to": {
+					"line": 36,
+					"ch": 21
+				}
+			},
+			"editWith": "colorPicker",
+			"type": "string",
+			"name": "Color"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 40,
+					"ch": 15
+				},
+				"to": {
+					"line": 40,
+					"ch": 21
+				}
+			},
+			"editWith": "colorPicker",
+			"type": "string",
+			"name": "Color"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 79,
+					"ch": 29
+				},
+				"to": {
+					"line": 79,
+					"ch": 36
+				}
+			},
+			"editWith": "colorPicker",
+			"type": "string",
+			"name": "Color",
+			"group": "TEXT"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 80,
+					"ch": 32
+				},
+				"to": {
+					"line": 80,
+					"ch": 34
+				}
+			},
+			"type": "number",
+			"name": "FontSize",
+			"group": "TEXT"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 81,
+					"ch": 34
+				},
+				"to": {
+					"line": 81,
+					"ch": 42
+				}
+			},
+			"editWith": "dropdown",
+			"dropdownOptions": "FontWeight",
+			"type": "string",
+			"name": "FontWeight",
+			"group": "TEXT"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 82,
+					"ch": 34
+				},
+				"to": {
+					"line": 82,
+					"ch": 50
+				}
+			},
+			"editWith": "dropdown",
+			"dropdownOptions": "FontFamily",
+			"type": "string",
+			"name": "FontFamily",
+			"group": "TEXT"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 106,
+					"ch": 19
+				},
+				"to": {
+					"line": 106,
+					"ch": 21
+				}
+			},
+			"type": "number",
+			"name": "Padding",
+			"group": "TOGGLE CONTAINER"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 107,
+					"ch": 15
+				},
+				"to": {
+					"line": 107,
+					"ch": 27
+				}
+			},
+			"editWith": "dropdown",
+			"dropdownOptions": [
+				"horizontal",
+				"vertical"
+			],
+			"type": "string",
+			"name": "Orientation",
+			"group": "TOGGLE CONTAINER"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 108,
+					"ch": 11
+				},
+				"to": {
+					"line": 108,
+					"ch": 13
+				}
+			},
+			"type": "number",
+			"name": "Spacing",
+			"group": "TOGGLE CONTAINER"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 114,
+					"ch": 13
+				},
+				"to": {
+					"line": 114,
+					"ch": 30
+				}
+			},
+			"editWith": "colorPicker",
+			"type": "string",
+			"name": "Color",
+			"group": "TOGGLE ITEM"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 115,
+					"ch": 23
+				},
+				"to": {
+					"line": 115,
+					"ch": 41
+				}
+			},
+			"editWith": "colorPicker",
+			"type": "string",
+			"name": "BackgroundColor",
+			"group": "TOGGLE ITEM"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 116,
+					"ch": 19
+				},
+				"to": {
+					"line": 116,
+					"ch": 40
+				}
+			},
+			"editWith": "colorPicker",
+			"type": "string",
+			"name": "BorderColor",
+			"group": "TOGGLE ITEM"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 117,
+					"ch": 19
+				},
+				"to": {
+					"line": 117,
+					"ch": 40
+				}
+			},
+			"editWith": "colorPicker",
+			"type": "string",
+			"name": "ActiveColor",
+			"group": "TOGGLE ITEM"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 118,
+					"ch": 29
+				},
+				"to": {
+					"line": 118,
+					"ch": 46
+				}
+			},
+			"editWith": "colorPicker",
+			"type": "string",
+			"name": "ActiveBackgroundColor",
+			"group": "TOGGLE ITEM"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 119,
+					"ch": 20
+				},
+				"to": {
+					"line": 119,
+					"ch": 21
+				}
+			},
+			"type": "number",
+			"name": "BorderRadius",
+			"group": "TOGGLE ITEM"
+		}
+	]
+}
